@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="shortcut icon" href="assets/profile/silverwolficon.png" type="image/x-icon">
+    <title>bryaneffect.int · Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="stylesheet" href="./style.css?v=2">
+</head>
+
+<body class="code-theme bg-[var(--bg)] text-[var(--text-primary)] overflow-x-hidden flex justify-center items-center min-h-dvh w-full perspective-wrapper">
+
+
+    <canvas id="shader-bg" class="fixed inset-0 z-[-1] pointer-events-none w-full h-full block"></canvas>
+
+    <div id="main-content"
+        class="w-full max-w-[720px] mx-auto px-5 sm:px-8 py-6 sm:py-8 z-[5] rounded-xl shadow-lg bg-darkslide">
+
+        <div class="flex justify-between mb-6 sm:mb-8 gap-2">
+            <a href="./index.html"
+                class="menu-btn inline-flex border border-[var(--border-medium)] px-3 py-1 items-center gap-2 hover:pl-7 text-xs font-mono cursor-pointer text-[var(--text-muted)] hover:text-[var(--link-hover)] hover:border-[var(--link-hover)]">
+                <span>BACK</span>
+            </a>
+
+            <button id="theme-toggle"
+                class="inline-flex shrink-0 items-center gap-2 text-xs font-mono cursor-pointer text-[var(--text-muted)] hover:text-[var(--text-secondary)]">
+                <span class="relative inline-block w-10 h-5 bg-[var(--border-medium)] rounded-full">
+                    <span id="theme-thumb"
+                        class="absolute top-0.5 left-0.5 w-4 h-4 bg-[var(--bg)] rounded-full transition-all duration-500 ease-in-out"></span>
+                </span>
+                <span>RedCode / BlueCode</span>
+            </button>
+        </div>
+
+        <div class="text-xs uppercase tracking-widest text-[var(--text-muted)] mb-6 sm:mb-8 font-normal">
+            BRYANEFFECT.INT / PROJECTS
+        </div>
+
+        <div class="flex items-center gap-2 pb-3 flex-wrap">
+            <img src="assets/profile/silverwolficon.png" alt="bryaneffect.int Logo"
+                class="h-10 sm:h-12 none transition-all duration-150 dark:non-invert">
+            <span class="text-3xl sm:text-4xl font-medium tracking-tight">projects</span>
+        </div>
+
+        <div class="text-sm sm:text-base text-[var(--text-secondary)] mb-6 sm:mb-8 font-normal border-l-2 border-[var(--border-medium)] pl-4">
+            A directory of things I've built while I should've been sleeping.
+        </div>
+
+        <div class="projects-page">
+            <section class="showcase" aria-label="Selected work">
+                <h2 class="showcase-label">Coding Work</h2>
+
+                <div class="showcase-preview" aria-hidden="true">
+                    <div class="showcase-layers"></div>
+                    <div class="showcase-preview-shade"></div>
+                </div>
+
+                <div class="showcase-list">
+                    <a href="https://github.com/bryaneffect/startup-silverwolf-public.git" class="showcase-item"
+                        data-title="Silverwolf OS v.1" data-angle="200"
+                        data-video="assets/coding/silverwolfos1.mp4" data-image="assets/coding/silverwolfos1.png">
+                        <div class="showcase-row">
+                            <div class="showcase-row-main">
+                                <div class="showcase-title-wrap">
+                                    <h3 class="showcase-title"><span>Silverwolf OS v.1</span></h3>
+                                    <svg class="showcase-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </div>
+                                <p class="showcase-desc">The first version of the Silverwolf OS startup page.</p>
+                            </div>
+                            <span class="showcase-badge">v1</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/bryaneffect/startup-silverwolf-v2.git" class="showcase-item"
+                        data-title="Silverwolf OS v.2" data-angle="200"
+                        data-video="assets/coding/silverwolfos2.mp4" data-image="assets/coding/silverwolfos2.png">
+                        <div class="showcase-row">
+                            <div class="showcase-row-main">
+                                <div class="showcase-title-wrap">
+                                    <h3 class="showcase-title"><span>Silverwolf OS v.2</span></h3>
+                                    <svg class="showcase-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </div>
+                                <p class="showcase-desc">The second, reworked version of Silverwolf OS.</p>
+                            </div>
+                            <span class="showcase-badge">v2</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/bryaneffect/strinova-outbreak-deck-community.git" class="showcase-item"
+                        data-title="Outbreak Decks Strinova" data-angle="45"
+                        data-video="assets/coding/outbreakdecks.mp4" data-image="assets/coding/outbreakdecks.png">
+                        <div class="showcase-row">
+                            <div class="showcase-row-main">
+                                <div class="showcase-title-wrap">
+                                    <h3 class="showcase-title"><span>Outbreak Decks Strinova</span></h3>
+                                    <svg class="showcase-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </div>
+                                <p class="showcase-desc">A collection of decks for the Outbreak game.</p>
+                            </div>
+                            <span class="showcase-badge">web</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/bryaneffect/YTMusic-Activity-App.git" class="showcase-item"
+                        data-title="YT Music Activity Discord" data-angle="45"
+                        data-video="assets/coding/ytmusicactivity.mp4" data-image="assets/coding/ytmusicactivity.png">
+                        <div class="showcase-row">
+                            <div class="showcase-row-main">
+                                <div class="showcase-title-wrap">
+                                    <h3 class="showcase-title"><span>YT Music Activity Discord</span></h3>
+                                    <svg class="showcase-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </div>
+                                <p class="showcase-desc">Show your YouTube Music activity on Discord.</p>
+                            </div>
+                            <span class="showcase-badge">app</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="showcase" aria-label="Selected work">
+                <h2 class="showcase-label">AMV Projects File</h2>
+
+                <div class="showcase-preview" aria-hidden="true">
+                    <div class="showcase-layers"></div>
+                    <div class="showcase-preview-shade"></div>
+                </div>
+
+                <div class="showcase-list">
+                    <a href="https://alightcreative.com/am/share/u/WiwAffm5l5S2MaipAOpUTfYTvSf1/p/iCdFboTl4t-273e1a4c66bc2d97" class="showcase-item"
+                        data-title="kanami-harvey" data-angle="200"
+                        data-video="assets/amv/kanami-harvey.mp4">
+                        <div class="showcase-row">
+                            <div class="showcase-row-main">
+                                <div class="showcase-title-wrap">
+                                    <h3 class="showcase-title"><span>Kanami - Harvey Edits</span></h3>
+                                    <svg class="showcase-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </div>
+                                <p class="showcase-desc">Alight Motion Project</p>
+                            </div>
+                            <span class="showcase-badge">project</span>
+                        </div>
+                    </a>
+
+                    <a href=# class="showcase-item"
+                        data-title="herta-beautiful" data-angle="200"
+                        data-video="assets/amv/herta-beautiful.mp4">
+                        <div class="showcase-row">
+                            <div class="showcase-row-main">
+                                <div class="showcase-title-wrap">
+                                    <h3 class="showcase-title"><span>Herta - Beautiful Edits</span></h3>
+                                    <svg class="showcase-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </div>
+                                <p class="showcase-desc">Alight Motion Project (Lost)</p>
+                            </div>
+                            <span class="showcase-badge">project</span>
+                        </div>
+                    </a>
+
+                    <a href=# class="showcase-item"
+                        data-title="comingsoon" data-angle="200"
+                        data-image="assets/amv/comingsoon.png">
+                        <div class="showcase-row">
+                            <div class="showcase-row-main">
+                                <div class="showcase-title-wrap">
+                                    <h3 class="showcase-title"><span>Coming Soon</span></h3>
+                                    <svg class="showcase-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 17 17 7M8 7h9v9" />
+                                    </svg>
+                                </div>
+                                <p class="showcase-desc">Alight Motion Project</p>
+                            </div>
+                            <span class="showcase-badge">project</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <div class="copy-terminal-heading text-3xl sm:text-4xl font-medium tracking-tight">Startup</div>
+
+            <div class="copy-terminal" aria-label="Copy project link">
+                <div class="copy-terminal-bar">
+                    <span class="copy-terminal-title">
+                        <span class="copy-terminal-prompt">&gt;_</span>
+                        Terminal
+                    </span>
+                    <button id="copy-link" class="copy-terminal-button" type="button" title="Copy project link" aria-label="Copy project link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="8" y="8" width="11" height="11" rx="2"></rect>
+                            <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="copy-terminal-body">
+                    <label for="project-link-select">PS &gt;</label>
+                    <select id="project-link-select" class="copy-terminal-select" aria-label="Choose a project link">
+                        <option value="https://startup-silverwolf-wallpaper-59yb.vercel.app/">Silverwolf OS v1</option>
+                        <option value="https://startup-silverwolf-v2-lnp6.vercel.app/">Silverwolf OS v2</option>
+                    </select>
+                    <span class="copy-terminal-cursor" aria-hidden="true"></span>
+                </div>
+                <div id="copy-status" class="copy-terminal-status" role="status" aria-live="polite"></div>
+            </div>
+            <p class="copy-terminal-note">Note: This is for display only; it does not need to be pasted into a real terminal.</p>
+        </div>
+
+        <div class="projects-footer mt-8 sm:mt-12 pt-4 sm:pt-6 flex flex-wrap justify-between items-baseline text-xs text-[var(--text-muted)] gap-y-2">
+            <div class="space-x-4">
+                <span>© bryaneffect.int</span>
+                <span>stay awake</span>
+            </div>
+            <div class="space-x-4">
+                <a href="https://github.com/bryaneffect" target="_blank" rel="noopener"
+                    class="text-[var(--link-color)] no-underline border-b border-[var(--border-light)] hover:text-[var(--link-hover)] hover:border-[var(--text-muted)]">github</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <script src="./shader-bg.js"></script>
+    <script>
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const thumb = document.getElementById('theme-thumb');
+        let themeTransitionTimeout;
+        if (localStorage.getItem('codeTheme') === 'blue') {
+            root.classList.add('dark');
+        } else {
+            root.classList.remove('dark');
+        }
+
+        function updateCodeTheme() {
+            const isBlueCode = root.classList.contains('dark');
+            thumb.style.transform = isBlueCode ? 'translateX(20px)' : 'translateX(0)';
+            themeToggle.setAttribute('aria-pressed', String(isBlueCode));
+            themeToggle.setAttribute('aria-label', isBlueCode ? 'Switch to RedCode' : 'Switch to BlueCode');
+        }
+        updateCodeTheme();
+
+        themeToggle.addEventListener('click', () => {
+            window.clearTimeout(themeTransitionTimeout);
+            document.body.classList.add('theme-transitioning');
+            themeTransitionTimeout = window.setTimeout(() => {
+                document.body.classList.remove('theme-transitioning');
+            }, 450);
+            root.classList.toggle('dark');
+            localStorage.setItem('codeTheme', root.classList.contains('dark') ? 'blue' : 'red');
+            updateCodeTheme();
+        });
+
+        document.querySelectorAll('.showcase').forEach(function (section) {
+            const preview = section.querySelector('.showcase-preview');
+            const layerBox = section.querySelector('.showcase-layers');
+            if (!preview || !layerBox) return;
+
+            const items = Array.from(section.querySelectorAll('.showcase-item'));
+            const folderPath = 'M6 16a4 4 0 0 1 4-4h13l5 6h26a4 4 0 0 1 4 4v26a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V16z';
+
+            const layers = items.map((item) => {
+                const layer = document.createElement('div');
+                layer.className = 'showcase-layer';
+                const image = item.dataset.image;
+                const video = item.dataset.video;
+                if (video) {
+                    const v = document.createElement('video');
+                    v.src = video;
+                    if (image) v.poster = image;
+                    v.muted = true;
+                    v.loop = true;
+                    v.playsInline = true;
+                    v.preload = 'metadata';
+                    layer.appendChild(v);
+                } else if (image) {
+                    layer.style.backgroundImage = `url("${image}")`;
+                } else {
+                    layer.style.setProperty('--angle', (item.dataset.angle || 135) + 'deg');
+                    layer.classList.add('showcase-layer-fallback');
+                    layer.innerHTML =
+                        `<svg viewBox="0 0 64 64" aria-hidden="true"><path d="${folderPath}"/></svg>` +
+                        `<span></span>`;
+                    layer.querySelector('span').textContent = item.dataset.title || '';
+                }
+                layerBox.appendChild(layer);
+                return layer;
+            });
+
+            const target = { x: 0, y: 0 };
+            const pos = { x: 0, y: 0 };
+            let raf = 0;
+            let active = -1;
+
+            function render() {
+                pos.x += (target.x - pos.x) * 0.15;
+                pos.y += (target.y - pos.y) * 0.15;
+                preview.style.transform = `translate3d(${pos.x + 20}px, ${pos.y - 100}px, 0)`;
+                const settling = Math.abs(target.x - pos.x) > 0.1 || Math.abs(target.y - pos.y) > 0.1;
+                raf = (active >= 0 || settling) ? requestAnimationFrame(render) : 0;
+            }
+            function start() { if (!raf) raf = requestAnimationFrame(render); }
+
+            function setTarget(e) {
+                const rect = section.getBoundingClientRect();
+                target.x = e.clientX - rect.left;
+                target.y = e.clientY - rect.top;
+            }
+
+            section.addEventListener('mousemove', (e) => { setTarget(e); start(); });
+
+            items.forEach((item, i) => {
+                item.addEventListener('mouseenter', (e) => {
+                    setTarget(e);
+                    if (active < 0) { pos.x = target.x; pos.y = target.y; }
+                    active = i;
+                    layers.forEach((l, j) => {
+                        l.classList.toggle('is-active', j === i);
+                        const v = l.querySelector('video');
+                        if (!v) return;
+                        if (j === i) v.play().catch(() => {});
+                        else v.pause();
+                    });
+                    preview.classList.add('is-visible');
+                    start();
+                });
+                item.addEventListener('mouseleave', () => {
+                    active = -1;
+                    layers.forEach((l) => {
+                        l.classList.remove('is-active');
+                        const v = l.querySelector('video');
+                        if (v) v.pause();
+                    });
+                    preview.classList.remove('is-visible');
+                });
+            });
+        });
+
+        const projectLinkSelect = document.getElementById('project-link-select');
+        const copyLinkButton = document.getElementById('copy-link');
+        const copyStatus = document.getElementById('copy-status');
+
+        copyLinkButton.addEventListener('click', async () => {
+            const link = projectLinkSelect.value;
+
+            try {
+                await navigator.clipboard.writeText(link);
+                copyStatus.textContent = 'copied';
+            } catch {
+                const fallback = document.createElement('textarea');
+                fallback.value = link;
+                fallback.style.position = 'fixed';
+                fallback.style.opacity = '0';
+                document.body.appendChild(fallback);
+                fallback.select();
+                document.execCommand('copy');
+                fallback.remove();
+                copyStatus.textContent = 'copied';
+            }
+
+            window.setTimeout(() => {
+                copyStatus.textContent = '';
+            }, 1600);
+        });
+    </script>
+</body>
+
+</html>
